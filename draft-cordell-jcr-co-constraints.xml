@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rfc SYSTEM "http://xml.resource.org/authoring/rfc2629.dtd"
+[
+	<!ENTITY RFC7159 PUBLIC ''
+ 'http://xml.resource.org/public/rfc/bibxml/reference.RFC.7159.xml'>
+]>
+<?rfc toc="true"?>
+<rfc category="std" docName="draft-cordell-jcr-co-constraints-00" ipr="trust200902">
+	<front>
+		<title abbrev="JCR Co-Constraints">Co-Constraints for JSON Content Rules</title>
+		<author fullname="Pete Cordell" initials="P." surname="Cordell">
+			<organization>Codalogic</organization>
+			<address>
+				<postal>
+					<street>PO Box 30</street>
+					<city>Ipswitch</city>
+					<country>UK</country>
+					<code>IPX 2WY</code>
+				</postal>
+				<email>pete.cordell@codalogic.com</email>
+				<uri>http://www.codalogic.com</uri>
+			</address>
+		</author>
+		<author fullname="Andrew Lee Newton" initials="A.L." surname="Newton">
+			<organization abbrev="ARIN">American Registry for Internet Numbers</organization>
+			<address>
+				<postal>
+					<street>3635 Concorde Parkway</street>
+					<city>Chantilly</city>
+					<region>VA</region>
+					<country>US</country>
+					<code>20151</code>
+				</postal>
+				<email>andy@arin.net</email>
+				<uri>http://www.arin.net</uri>
+			</address>
+		</author>
+		<date/>
+		<abstract>
+			<t>
+				JSON Content Rules provides a powerful, intuitive and concise method for defining the structure of JSON messages.  However, modern JSON usage patterns often means the JCR alone is occasionally not able to capture such constraints in a satisfactory way.  JCR Co-Constraints (JCRCC) defines additional JCR directives and annotations that can be added to a JCR ruleset in order to define more detailed constraints on JSON messages.
+			</t>
+		</abstract>
+	</front>
+
+	<middle>
+		<section title="Introduction">
+			<t>
+				JSON Content Rules provides a powerful, intuitive and concise method for defining the structure of JSON messages.  In addition to describing the overall structure of JSON messages, JCR aims capture the constraints that are imposed on individual items within a message.  However, modern JSON usage patterns often means the JCR alone is occasionally not able to capture such constraints in a satisfactory way.  JCR Co-Constraints (JCRCC) defines additional JCR directives and annotations that can be added to a JCR ruleset in order to define more detailed constraints on items within a JSON message, and also supports specifying constraints that depend on the relationship of multiple JSON items.
+			</t>
+		</section>
+		<section title="Overview of Co-Constraints">
+			<t>
+
+			</t>
+			<figure>
+				<artwork xml:space="preserve">
+   fn "file-name"  : "rfc4627.txt"
+   lc "line-count" : 2102
+   wc "word-count" : 16714
+                </artwork>
+			</figure>
+		</section>
+	</middle>
+
+	<back>
+		<references title="Normative References">
+
+			&RFC7159;
+
+		</references>
+		<references title="Infomative References">
+			<reference anchor="ARIN_JCR_VALIDATOR" target="https://github.com/arineng/jcrvalidator">
+				<front>
+					<title>JSON Content Rules Validator (Work In Progress)</title>
+					<author>
+						<organization>American Registry for Internet Numbers</organization>
+					</author>
+					<date/>
+				</front>
+			</reference>
+			<reference anchor="CODALOGIC_JCR_VALIDATOR" target="https://github.com/codalogic/cl-jcr-parser">
+				<front>
+					<title>cl-jcr-parser (Work In Progress)</title>
+					<author>
+						<organization>Codalogic</organization>
+					</author>
+					<date/>
+				</front>
+			</reference>
+		</references>
+		<section title="JCR Implementations">
+			<t>
+				The following implementations, <xref target="ARIN_JCR_VALIDATOR"></xref> and
+				<xref target="CODALOGIC_JCR_VALIDATOR"></xref> have influenced the development
+				of this document.
+			</t>
+		</section>
+	</back>
+</rfc>
