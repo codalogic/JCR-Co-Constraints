@@ -17,7 +17,8 @@ ternary = "if" condition "then" condition "else" condition
 function = "name" "(" identifier ")" /
            "length" "(" identifier ")" /
            "count" "(" identifier ")" /
-           "capture" "(" regex "," identifier ")"
+           "capture" "(" regex "," identifier ")" /
+           "error" "(" q_string ")" / ; string may be subject to interpolation and locatization
            "is_integer" "(" identifier ")" /
            "is_float" "(" identifier ")" /
            etc...
