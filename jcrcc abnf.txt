@@ -1,10 +1,10 @@
-condition = relational ( * ( and-combiner relational ) / * ( or-combiner relational ) )
+condition = relational ( * ( "&&" relational ) / * ( "||" relational ) )
 
-relational = ["!"] value / value comparator value / ["!"] condition-group
+relational = ["!"] value / value comparator value / ["!"] condition-group / ternary
 
-value = identifier / constant / ternary / function
+value = identifier / constant / function / "@" [ alias "." ] name
 
-identifier = "$" / "$" [ alias "." ] name / "@" [ alias "." ] name
+identifier = "$" / "$" [ alias "." ] name
 
 constant = "null" / "true" / "false" / integer / float / q_string / regex
 
@@ -12,12 +12,13 @@ comparator = "==" / "!=" / "<" / "<=" / ">=" / ">"
 
 condition-group = "(" condition ")"
 
-ternary = "if" condition "then" condition "else" condition
+ternary = "if" "(" condition ")" "then" "(" condition ")" "else" "(" condition ")"
 
 function = "name" "(" identifier ")" /
            "length" "(" identifier ")" /
            "count" "(" identifier ")" /
            "capture" "(" regex "," identifier ")" /
+           "descendent" "(" identifier ")" / ; Starts looking up in the variable stack
            "error" "(" q_string ")" / ; string may be subject to interpolation and locatization
            "is_integer" "(" identifier ")" /
            "is_float" "(" identifier ")" /
